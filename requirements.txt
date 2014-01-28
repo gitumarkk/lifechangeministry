@@ -1,0 +1,9 @@
+Django==1.6.1
+django-nose
+django-toolbelt
+mandrill
+nose
+psycopg2
+pillow
+requests==2.2.1
+south
