@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django_nose',  # unittesting
 
     # Project
+    'frontpages',
 )
 
 MIDDLEWARE_CLASSES = (
