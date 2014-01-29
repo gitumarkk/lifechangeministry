@@ -54,6 +54,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages")
+
 ROOT_URLCONF = 'lcm.urls'
 
 WSGI_APPLICATION = 'lcm.wsgi.application'
@@ -87,8 +95,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+# ========================================================
+# STATIC FILES CONFIGURATION
+# ========================================================
+
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+MEDIA_URL = '/media/'
 # ========================================================
 # TEST RUNNER CONFIGURATION
 # ========================================================
@@ -104,6 +121,17 @@ SOUTH_TESTS_MIGRATE = False  # Do not run the migrations for our tests.
                              # for the tests and as such nothing needs to be
                              # migrated.
 
+
+# ========================================================
+# HEROKU CONFIGURATIONS
+# ========================================================
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+MANDRILL_KEY = ''
 
 # Import production settings
 try:
