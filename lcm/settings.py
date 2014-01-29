@@ -63,7 +63,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages")
+    "django.contrib.messages.context_processors.messages",
+    "lcm.context_processors.highlight_active_menu")
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -129,10 +130,13 @@ STATIC_ROOT = ''
 
 
 MEDIA_URL = '/media/'
+
+
 # ========================================================
 # TEST RUNNER CONFIGURATION
 # ========================================================
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
 
 # ========================================================
 # SOUTH TEST CONFIGURATIONS
@@ -146,6 +150,13 @@ SOUTH_TESTS_MIGRATE = False  # Do not run the migrations for our tests.
 
 
 # ========================================================
+# EMAILS
+# ========================================================
+MANDRILL_KEY = ''
+TO_EMAIL = "gitumarkk+test@gmail.com"
+
+
+# ========================================================
 # HEROKU CONFIGURATIONS
 # ========================================================
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -153,8 +164,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
-
-MANDRILL_KEY = ''
 
 # Import production settings
 try:
