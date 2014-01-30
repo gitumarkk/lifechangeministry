@@ -35,7 +35,7 @@ class ContactTest(TestCase):
             response = self.client.post(self.contact, data=data, follow=True)
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.request["PATH_INFO"], "/")
-            self.assertContains(response, "Thank you we have recieved your message.")
+            self.assertContains(response, "Thank you we have received your message.")
 
             contact_obj = Contact.objects.get(email=self.email)
             self.assertEqual(contact_obj.name, data["name"])
