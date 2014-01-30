@@ -30,7 +30,9 @@ def contact(request):
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             contact = contact_form.save()
-            contact_email(contact.name, contact.email, contact.message, contact.id)
+            contact_email(contact.name, contact.email, contact.message)
+            contact.sent = True  # Assumes that if this function doesn't error the e-mail has been sent
+            contact.save()
             messages.success(request, "Thank you we have recieved your message.")
             return redirect(reverse("home"))
         else:

@@ -6,7 +6,7 @@ from django.conf import settings
 # FROM THIRD PARTY
 import mandrill
 
-def contact_email(name, email, message, id=False):
+def contact_email(name, email, message):
         context_email = {"message": message, "email": email, "name": name}
 
         html = get_template("email/contact.html").render(Context(context_email))
