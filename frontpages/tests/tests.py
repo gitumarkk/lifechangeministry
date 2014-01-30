@@ -8,6 +8,7 @@ from frontpages.models import Contact
 # Third Party
 from mock import patch, Mock
 
+
 class ContactTest(TestCase):
     def setUp(self):
         self.contact = reverse("contact")
@@ -19,7 +20,6 @@ class ContactTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.request["PATH_INFO"], "/contact/")
         self.assertIn("contact_form", response.context)
-
 
     def test_post_to_form_with_good_data(self):
         data = {"name": self.name,
@@ -35,7 +35,8 @@ class ContactTest(TestCase):
             response = self.client.post(self.contact, data=data, follow=True)
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.request["PATH_INFO"], "/")
-            self.assertContains(response, "Thank you we have received your message.")
+            self.assertContains(response,
+                                "Thank you we have received your message.")
 
             contact_obj = Contact.objects.get(email=self.email)
             self.assertEqual(contact_obj.name, data["name"])

@@ -11,5 +11,6 @@ class Contact(models.Model):
     class Meta:
         verbose_name = u'Contact Us'
         verbose_name_plural = u'Contact Us'
+
     def __unicode__(self):
         return self.email

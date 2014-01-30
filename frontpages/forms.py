@@ -22,6 +22,7 @@ class ContactForm(forms.ModelForm):
                                                             'class': 'required form-control'},
                                                                ),
                              label=_("Message"))
+
     class Meta:
         model = Contact
         exclude = ["created_at"]
