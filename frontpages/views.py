@@ -38,7 +38,7 @@ def contact(request):
                              "Thank you we have received your message.")
             return redirect(reverse("home"))
         else:
-            messages.error(request, "There were errors on the form.")
+            messages.error(request, "There were errors on the form.", extra_tags="danger")
     else:
         contact_form = ContactForm()
     context = {"contact_form": contact_form}
