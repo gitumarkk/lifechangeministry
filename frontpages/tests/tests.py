@@ -49,5 +49,5 @@ class ContactTest(TestCase):
         self.assertEqual(errors["message"], [u'This field is required.'])
         self.assertEqual(errors["name"], [u'This field is required.'])
         self.assertEqual(errors["email"], [u'This field is required.'])
-        import pdb; pdb.set_trace()
-        pass
+        self.assertEqual(response.request["PATH_INFO"], self.contact)
+        self.assertContains(response, "There were errors on the form.")
