@@ -2,12 +2,16 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% block content %}
+{% block navbar_2 %}
+    {% include "frontpages/navbar-about.html" %}
+{% endblock navbar_2 %}
 
+{% block content %}
     <div class="container">
+        <div class="margin-top-fifty"></div>
         {% include "render_messages.html" %}
 
-        <div class="row featurette">
+        <div id="what" class="row featurette">
             <div class="col-lg-12">
                 <h2 class="featurette-heading">What we do?</h2>
                 <p>
@@ -39,7 +43,7 @@
             </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr id = "why" class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-lg-12">
@@ -73,7 +77,7 @@
             </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr id="who" class="featurette-divider">
 
         <div class="row featurette">
             <h2 class="featurette-heading">Who does it?</h2>
@@ -146,7 +150,7 @@
 
         </div>
 
-        <hr class="featurette-divider">
+        <hr id="when" class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-lg-12">
