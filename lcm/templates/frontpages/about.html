@@ -1,10 +1,185 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load i18n %}
 
 {% block content %}
 
     <div class="container">
         {% include "render_messages.html" %}
+
+        <div class="row featurette">
+            <div class="col-lg-12">
+                <h2 class="featurette-heading">What we do?</h2>
+                <p>
+                    Integer purus sit egestas, ultrices augue vut amet turpis egestas
+                    mus platea mus pellentesque scelerisque non, cum in augue vel! Odio
+                    magnis, a porttitor, duis augue sit pellentesque phasellus ridiculus
+                    porttitor ac, arcu arcu mid. Ultrices, est ut non lectus! Pulvinar porta,
+                    porta, eros phasellus duis vel sit nunc augue proin amet rhoncus penatibus.
+                    Lectus? Ut duis natoque quis, augue, sagittis tincidunt risus mus, ac et
+                    penatibus enim dignissim dolor! Elit pulvinar. Sagittis placerat purus,
+                    facilisis ac vel. Vut sit. Tristique habitasse urna quis, massa facilisis
+                    sociis adipiscing massa platea integer mauris! Magna vel tristique mauris!
+                    Turpis auctor nec pulvinar ut porta mid urna, et? Eros, pulvinar nec, nec
+                    egestas, augue, hac aenean duis! Ac cum vel, sit sed! A.
+                </p>
+
+                <p>
+                    Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                    Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                    Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                    mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                    et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                    pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                    Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                    Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                    pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                    nascetur dignissim pulvinar, nisi.
+                </p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-12">
+                <h2 class="featurette-heading">Why we do it?</h2>
+                <p>
+                    Integer purus sit egestas, ultrices augue vut amet turpis egestas
+                    mus platea mus pellentesque scelerisque non, cum in augue vel! Odio
+                    magnis, a porttitor, duis augue sit pellentesque phasellus ridiculus
+                    porttitor ac, arcu arcu mid. Ultrices, est ut non lectus! Pulvinar porta,
+                    porta, eros phasellus duis vel sit nunc augue proin amet rhoncus penatibus.
+                    Lectus? Ut duis natoque quis, augue, sagittis tincidunt risus mus, ac et
+                    penatibus enim dignissim dolor! Elit pulvinar. Sagittis placerat purus,
+                    facilisis ac vel. Vut sit. Tristique habitasse urna quis, massa facilisis
+                    sociis adipiscing massa platea integer mauris! Magna vel tristique mauris!
+                    Turpis auctor nec pulvinar ut porta mid urna, et? Eros, pulvinar nec, nec
+                    egestas, augue, hac aenean duis! Ac cum vel, sit sed! A.
+                </p>
+
+                <p>
+                    Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                    Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                    Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                    mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                    et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                    pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                    Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                    Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                    pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                    nascetur dignissim pulvinar, nisi.
+                </p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <h2 class="featurette-heading">Who does it?</h2>
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <h4 class="featurette-heading">Evariste Umba. <span class="text-muted">Founding President.</span></h4>
+                    <p>
+                        Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                        Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                        Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                        mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                        et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                        pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                        Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                        Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                        pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                        nascetur dignissim pulvinar, nisi.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img class="featurette-image img-responsive img-polaroid" width="200px" src="{% static "img/content/temp_1.png" %}"  data-src="" alt="Evariste Umba">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="col-md-12 margin-top-fifty">
+                <div class="col-md-3">
+                    <img class="featurette-image img-responsive img-polaroid" width="200px" src="{% static "img/content/temp_1.png" %}"  data-src="" alt="Evariste Umba">
+                </div>
+
+                <div class="col-md-9">
+                    <h4 class="featurette-heading">First Last. <span class="text-muted">Pastor.</span></h4>
+                    <p>
+                        Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                        Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                        Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                        mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                        et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                        pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                        Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                        Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                        pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                        nascetur dignissim pulvinar, nisi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12 margin-top-fifty">
+                <div class="col-md-8">
+                    <h4 class="featurette-heading">First Last. <span class="text-muted">Financial Manager.</span></h4>
+                    <p>
+                        Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                        Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                        Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                        mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                        et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                        pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                        Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                        Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                        pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                        nascetur dignissim pulvinar, nisi.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img class="featurette-image img-responsive img-polaroid" width="200px" src="{% static "img/content/temp_1.png" %}"  data-src="" alt="Evariste Umba">
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-12">
+                <h2 class="featurette-heading">When we do it?</h2>
+                <p>
+                    Integer purus sit egestas, ultrices augue vut amet turpis egestas
+                    mus platea mus pellentesque scelerisque non, cum in augue vel! Odio
+                    magnis, a porttitor, duis augue sit pellentesque phasellus ridiculus
+                    porttitor ac, arcu arcu mid. Ultrices, est ut non lectus! Pulvinar porta,
+                    porta, eros phasellus duis vel sit nunc augue proin amet rhoncus penatibus.
+                    Lectus? Ut duis natoque quis, augue, sagittis tincidunt risus mus, ac et
+                    penatibus enim dignissim dolor! Elit pulvinar. Sagittis placerat purus,
+                    facilisis ac vel. Vut sit. Tristique habitasse urna quis, massa facilisis
+                    sociis adipiscing massa platea integer mauris! Magna vel tristique mauris!
+                    Turpis auctor nec pulvinar ut porta mid urna, et? Eros, pulvinar nec, nec
+                    egestas, augue, hac aenean duis! Ac cum vel, sit sed! A.
+                </p>
+
+                <p>
+                    Vut, mattis turpis dapibus cras ridiculus augue mauris pellentesque vel scelerisque!
+                    Ac sed non porttitor, montes dignissim turpis tristique natoque, nec parturient augue?
+                    Dignissim tortor adipiscing, odio eu integer a nunc sagittis, platea lacus parturient
+                    mattis turpis eros, purus tempor velit cum natoque non risus eros aliquam? Ultrices sed,
+                    et et quis egestas ac nunc sociis nec scelerisque! Risus mauris nisi hac lectus lundium mauris
+                    pulvinar urna. Natoque. Integer, sit pellentesque, sit nec ac dolor arcu tristique natoque.
+                    Integer ac scelerisque magna adipiscing lacus augue facilisis ultricies, montes nunc.
+                    Tempor? Mid magna et et urna. Scelerisque aliquet! Tincidunt velit dapibus duis placerat
+                    pulvinar odio, mid scelerisque integer, sociis rhoncus, lectus tempor ut, amet turpis a
+                    nascetur dignissim pulvinar, nisi.
+                </p>
+            </div>
+        </div>
+
     </div>
 
 {% endblock content %}
