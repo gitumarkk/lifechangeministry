@@ -41,3 +41,55 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.min-height-marketing{
+  min-height: 50px;
+}
+
+.marketing .col-lg-6 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.hr-who-does-it {
+  margin: 100px 100px; /* Space out the Bootstrap <hr> more */
+}
+
+.margin-top-fifty{
+  margin-top: 50px;
+}
+
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.img-circle {
+  -webkit-border-radius: 500px;
+     -moz-border-radius: 500px;
+          border-radius: 500px;
+}
