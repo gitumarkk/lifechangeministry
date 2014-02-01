@@ -1,6 +1,6 @@
 body {
   min-height: 1000px;
-  padding-top: 70px;
+  /*padding-top: 70px;*/
 }
 
 /* Registration contact */
@@ -75,7 +75,8 @@ body {
 }
 
 .margin-top-fifty{
-  margin-top: 50px;
+  margin-top: 120px;
+  /*padding-top: 50px;*/
 }
 
 .img-polaroid {
@@ -92,4 +93,17 @@ body {
   -webkit-border-radius: 500px;
      -moz-border-radius: 500px;
           border-radius: 500px;
+}
+
+/* Navbar Fixed top About Us */
+.navbar-fixed-top-for-about {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-top: 1px solid black;
+  top: 50px;
+  border-width: 0 0 1px;
+  max-height:10px;
+  font-size: 13px;
 }
