@@ -1,6 +1,5 @@
 body {
-  min-height: 1000px;
-  /*padding-top: 70px;*/
+  min-height: 500px;
 }
 
 /* Registration contact */
@@ -77,6 +76,10 @@ body {
 .margin-top-fifty{
   margin-top: 120px;
   /*padding-top: 50px;*/
+}
+
+.margin-top-ninety{
+  margin-top: 90px;
 }
 
 .img-polaroid {
