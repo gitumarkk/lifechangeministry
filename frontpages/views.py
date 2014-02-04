@@ -25,6 +25,27 @@ def about(request):
                   context)
 
 
+def stories(request):
+    context = {}
+    return render(request,
+                  "frontpages/stories.html",
+                  context)
+
+
+def partners(request):
+    context = {}
+    return render(request,
+                  "frontpages/partners.html",
+                  context)
+
+
+def donations(request):
+    context = {}
+    return render(request,
+                  "frontpages/stories.html",
+                  context)
+
+
 def contact(request):
     if request.method == "POST":
         contact_form = ContactForm(request.POST)
