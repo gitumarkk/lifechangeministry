@@ -14,6 +14,9 @@
             <ul class="nav navbar-nav">
                 <li {% if home %}class="active" {% endif %}><a href="{% url 'home' %}">Home</a></li>
                 <li {% if about %}class="active" {% endif %}><a href="{% url 'about' %}">About</a></li>
+                <li {% if stories %}class="active" {% endif %}><a href="{% url 'stories' %}">Stories</a></li>
+                <li {% if partners %}class="active" {% endif %}><a href="{% url 'partners' %}">Partners</a></li>
+                <li {% if donations %}class="active" {% endif %}><a href="{% url 'donations' %}">Donations</a></li>
                 <li {% if contact %}class="active" {% endif %}><a href="{% url 'contact' %}">Contact</a></li>
         </div><!--/.nav-collapse -->
     </div>
