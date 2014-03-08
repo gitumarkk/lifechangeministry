@@ -4,13 +4,14 @@ include:
 
 /srv/lifechangeministry/venv:
     virtualenv.managed:
-        - no_site_packages: True
-        - runas: Mark  # Who to run it as
+        - system_site_packages: False
+        - runas: {{ pillar["user"]}}  # Who to run it as
         - requirements: salt://django/requirements.txt
         - require:
             - pkg: python-dev
+            - pkg: python-pip
             - pkg: python-virtualenv
-            -pkg: libpq-dev
+            - pkg: libpq-dev
 
 
 djangouser: # Name of the package or service
@@ -19,7 +20,7 @@ djangouser: # Name of the package or service
         - password: {{ pillar["dbpassword"]}}
         - runas: postgres
         - require:
-            - service:postgresql
+            - service: postgresql
 
 
 djangodb:
@@ -37,7 +38,7 @@ djangodb:
 
 production_settings.py:
     file.managed:
-        - name: /srv/lifechangeministry/lifechangeministry/lcm/production_settings.py
+        - name: /srv/lifechangeministry/lcm/production_settings.py
         - source: salt://django/production_settings.py
         - template: jinja  # WHat in the world is the template
         - require:

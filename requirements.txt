@@ -1,9 +1,11 @@
 Django==1.6.1
 django-nose==1.2
 django-toolbelt==0.0.1
+gunicorn
 mandrill==1.0.53
 mock==1.0.1
 nose==1.3.0
 Pillow==2.3.0
 requests==2.2.1
 South==0.8.4
+supervisor
