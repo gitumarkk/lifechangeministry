@@ -37,3 +37,5 @@ nosetests.xml
 
 # Project
 lcm/productions_settings.py
+.venv
+venv
