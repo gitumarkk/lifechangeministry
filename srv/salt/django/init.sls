@@ -1,6 +1,8 @@
 include:
     - requirements
     - postgresql
+    - supervisor
+    - nginx
 
 /srv/lifechangeministry/venv:
     virtualenv.managed:
@@ -12,6 +14,14 @@ include:
             - pkg: python-pip
             - pkg: python-virtualenv
             - pkg: libpq-dev
+
+
+django.supervisor.conf:
+    file.managed:
+        - name: /etc/supervisor/conf.d/django.conf
+        - source: salt://supervisor/django.conf
+        - require:
+            - pkg: supervisor
 
 
 djangouser: # Name of the package or service
@@ -40,6 +50,6 @@ production_settings.py:
     file.managed:
         - name: /srv/lifechangeministry/lcm/production_settings.py
         - source: salt://django/production_settings.py
-        - template: jinja  # WHat in the world is the template
+        - template: jinja  # What in the world is the template? I think it tells salt how to fill in the variables
         - require:
             - postgres_user: djangouser

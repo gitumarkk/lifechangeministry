@@ -17,6 +17,7 @@ nginx.conf:
     - source: salt://nginx/nginx.conf
     - user: {{ pillar["user"]}}
     # - group: www-data
+    - template: jinja
     - mode: 644
     - require:
         - pkg: nginx
