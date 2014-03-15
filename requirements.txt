@@ -1,5 +1,7 @@
 Django==1.6.1
+django-imagekit==3.2
 django-nose==1.2
+django-tinymce==1.5.2
 django-toolbelt==0.0.1
 gunicorn
 mandrill==1.0.53
