@@ -42,7 +42,9 @@ INSTALLED_APPS = (
     'django_nose',  # unittesting
 
     # Project
-    'frontpages',
+    'lcm.apps.frontpages',
+    'lcm.apps.frontpages',
+    'tinymce',
 )
 
 MIDDLEWARE_CLASSES = (
