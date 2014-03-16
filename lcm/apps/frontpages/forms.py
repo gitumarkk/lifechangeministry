@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 
 # Project
-from frontpages.models import Contact
+from lcm.apps.frontpages.models import Contact
 
 
 class ContactForm(forms.ModelForm):

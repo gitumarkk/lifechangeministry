@@ -43,7 +43,7 @@ INSTALLED_APPS = (
 
     # Project
     'lcm.apps.frontpages',
-    'lcm.apps.frontpages',
+    'lcm.apps.backend',
     'tinymce',
 )
 
@@ -133,6 +133,7 @@ STATIC_ROOT = ''
 
 MEDIA_URL = '/media/'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, "lcm", "media")
 
 # ========================================================
 # TEST RUNNER CONFIGURATION

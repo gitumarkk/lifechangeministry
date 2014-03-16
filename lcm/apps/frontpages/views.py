@@ -7,12 +7,17 @@ from django.contrib import messages
 
 
 # Project
-from frontpages.forms import ContactForm
+from lcm.apps.backend.models import Event, Story
+from lcm.apps.frontpages.forms import ContactForm
 from lcm.utils import contact_email
 
 
 def home(request):
-    context = {}
+    latest_story = Story.get_latest_story()
+    latest_event = Event.get_latest_event()
+
+    context = {"latest_story": latest_story,
+               "latest_event": latest_event}
     return render(request,
                   "frontpages/home.html",
                   context)
