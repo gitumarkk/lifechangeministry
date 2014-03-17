@@ -12,11 +12,14 @@ def highlight_active_menu(request):
     elif reverse("partners") in request.path:
         return {'partners': True}
 
-    elif reverse("donations") in request.path:
-        return {'donations': True}
+    elif reverse("ministry") in request.path:
+        return {'ministry': True}
 
     elif reverse("contact") in request.path:
         return {'contact': True}
 
     elif reverse("home") in request.path:
         return {"home": True}
+
+    else:
+        return

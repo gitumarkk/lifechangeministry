@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'lcm.apps.frontpages',
     'lcm.apps.backend',
     'tinymce',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -158,6 +159,18 @@ SOUTH_TESTS_MIGRATE = False  # Do not run the migrations for our tests.
 MANDRILL_KEY = ''
 TO_EMAIL = "gitumarkk+test@gmail.com"
 
+
+# ========================================================
+# CACHE
+# ========================================================
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': "lcm",
+    }
+}
+
+THUMBNAIL_DEBUG = DEBUG
 
 # ========================================================
 # HEROKU CONFIGURATIONS

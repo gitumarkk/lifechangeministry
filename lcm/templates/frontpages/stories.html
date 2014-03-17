@@ -5,6 +5,33 @@
 
     <div class="container">
         {% include "render_messages.html" %}
+
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Choose Story</h4>
+                {% for story in stories %}
+                    <div><a class="btn btn-default btn-block" href="{% url 'story' story.id %}" {% if current_story.id == story.id %} disabled="disabled" {% endif %} >{{ city.name }}  {{ story.title }} </a></div>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <h2>{{ current_story.title }}</h2>
+                </div>
+
+                <div class="col-md-10">
+                    {% if current_story.image %}
+                        <img class="featurette-image img-responsive img-polaroid" src="{{current_story.image.url }}" alt="Generic placeholder image">
+                    {% endif %}
+                </div>
+
+                <div class="col-md-10">
+                    {{ current_story.description|safe }}
+                </div>
+
+
+            </div>
+        </div>
     </div>
 
 {% endblock content %}

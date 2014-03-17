@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
@@ -7,7 +7,7 @@ from django.contrib import messages
 
 
 # Project
-from lcm.apps.backend.models import Event, Story
+from lcm.apps.backend.models import Event, Story, Partner
 from lcm.apps.frontpages.forms import ContactForm
 from lcm.utils import contact_email
 
@@ -31,23 +31,44 @@ def about(request):
 
 
 def stories(request):
-    context = {}
+    current_story = Story.get_latest_story()
+    stories = Story.get_stories()
+
+    context = {"current_story": current_story,
+                "stories": stories}
     return render(request,
                   "frontpages/stories.html",
                   context)
 
+def story(request, _id):
+    current_story = get_object_or_404(Story, pk=_id)
+    stories = Story.get_stories()
+
+    context = {"current_story": current_story,
+                "stories": stories}
+    return render(request,
+                  "frontpages/stories.html",
+                  context)
 
 def partners(request):
-    context = {}
+    partners = Partner.get_partners()
+    context = {"partners": partners}
     return render(request,
                   "frontpages/partners.html",
                   context)
 
+def partner(request, _id):
+    partner = get_object_or_404(Partner, pk=_id)
+    context = {"partner": partner}
+    return render(request,
+                 "frontpages/partner.html",
+                  context)
 
-def donations(request):
+
+def ministry(request):
     context = {}
     return render(request,
-                  "frontpages/stories.html",
+                  "frontpages/ministry.html",
                   context)
 
 

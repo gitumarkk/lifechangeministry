@@ -5,6 +5,29 @@
 
     <div class="container">
         {% include "render_messages.html" %}
+
+        <div class="row">
+            <div class="col-md-12">
+                {% for partner in partners %}
+                    <div class="col-md-4">
+                        <div class="">
+                            <h2>{{ partner.title }}</h2>
+                        </div>
+
+                        <div class="">
+                            {% if partner.image %}
+                                <img class="featurette-image img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
+                            {% endif %}
+                        </div>
+
+                        <div class="">
+                            {{ partner.description|safe|truncatewords:50 }}
+                            <a href="{% url 'partner' partner.id %}">Read More</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
 {% endblock content %}
