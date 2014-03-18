@@ -3,6 +3,7 @@ include:
     - postgresql
     - supervisor
     - nginx
+    - memcached
 
 /srv/lifechangeministry/venv:
     virtualenv.managed:
@@ -14,6 +15,7 @@ include:
             - pkg: python-pip
             - pkg: python-virtualenv
             - pkg: libpq-dev
+            - pkg: memcached
 
 
 django.supervisor.conf:

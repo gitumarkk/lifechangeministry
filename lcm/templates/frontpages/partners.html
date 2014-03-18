@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load thumbnail %}
 
 {% block content %}
 
@@ -16,7 +17,9 @@
 
                         <div class="">
                             {% if partner.image %}
-                                <img class="featurette-image img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
+                                {% thumbnail partner.image "300x300" crop="center" as im %}
+                                    <img class="featurette-image img-responsive img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                                {% endthumbnail %}
                             {% endif %}
                         </div>
 

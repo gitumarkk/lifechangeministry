@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-lg-4">
                 {% if latest_event.image %}
-                    {% thumbnail latest_event.image "100x100" crop="center" as im %}
+                    {% thumbnail latest_event.image "200x200" crop="center" as im %}
                         <img class="featurette-image img-responsive img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                     {% endthumbnail %}
                 {% else %}
@@ -71,20 +71,29 @@
 
                 <h2>Upcoming Event</h2>
                 {{ latest_event.description|safe|truncatewords_html:50 }}
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+                {% if latest_event %}
+                    <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+                {% endif %}
+
             </div><!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
 
                 {% if latest_story.image %}
-                    <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" height="100" alt="Generic placeholder image">
+                    {% thumbnail latest_story.image "200x200" crop="center" as im %}
+                        <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                    {% endthumbnail %}
                 {% else %}
                     <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
                 {% endif %}
 
                 <h2>Latest Story</h2>
                 {{ latest_story.description|safe|truncatewords_html:50 }}
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+
+                {% if latest_story %}
+                    <p><a class="btn btn-default" href="{% url 'story' latest_story.id %}">View details &raquo;</a></p>
+                {% endif %}
+
             </div><!-- /.col-lg-4 -->
 
             <div class="col-lg-4">

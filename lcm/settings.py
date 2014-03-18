@@ -165,8 +165,8 @@ TO_EMAIL = "gitumarkk+test@gmail.com"
 # ========================================================
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': "lcm",
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
     }
 }
 
