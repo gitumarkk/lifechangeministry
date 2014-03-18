@@ -1,11 +1,8 @@
 include:
     - requirements
     - postgresql
-    - supervisor
-    - nginx
-    - memcached
 
-/srv/lifechangeministry/venv:
+/srv/venv:
     virtualenv.managed:
         - system_site_packages: False
         - runas: {{ pillar["user"]}}  # Who to run it as
@@ -15,16 +12,6 @@ include:
             - pkg: python-pip
             - pkg: python-virtualenv
             - pkg: libpq-dev
-            - pkg: memcached
-
-
-django.supervisor.conf:
-    file.managed:
-        - name: /etc/supervisor/conf.d/django.conf
-        - source: salt://supervisor/django.conf
-        - require:
-            - pkg: supervisor
-
 
 djangouser: # Name of the package or service
     postgres_user.present:
@@ -33,7 +20,6 @@ djangouser: # Name of the package or service
         - runas: postgres
         - require:
             - service: postgresql
-
 
 djangodb:
     postgres_database.present:
@@ -47,11 +33,10 @@ djangodb:
         - require:
             - postgres_user: djangouser
 
-
 production_settings.py:
     file.managed:
         - name: /srv/lifechangeministry/lcm/production_settings.py
         - source: salt://django/production_settings.py
-        - template: jinja  # What in the world is the template? I think it tells salt how to fill in the variables
+        - template: jinja  # WHat in the world is the template
         - require:
             - postgres_user: djangouser
