@@ -118,15 +118,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "lcm", "static"),
-)
-
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
+
 STATIC_ROOT = os.path.join(BASE_DIR, "lcm", "collectstatic")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "lcm", "static"),
+    STATIC_ROOT
+)
+
+
 
 # END OF STATIC FILES CONFIGURATION
 # ========================================================
