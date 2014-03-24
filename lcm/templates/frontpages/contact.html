@@ -3,9 +3,9 @@
 
 {% block content %}
 
-    <div class="row margin-top-ninety">
+    <div class="row top30">
         {% include "render_messages.html" %}
-        <div class="large-6 columns">
+        <div class="large-6 large-offset-3 columns">
             <form class="form-horizontal contact-registration" method="POST" action="{% url 'contact' %}">
                 {% csrf_token %}
                 {{ contact_form.as_p }}

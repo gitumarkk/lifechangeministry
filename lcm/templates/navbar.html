@@ -1,4 +1,4 @@
-<div class="contain-to-grid fixed">
+<div class="contain-to-grid">
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
             <li class="name">
@@ -21,8 +21,14 @@
                     </ul> -->
                 </li><li class="divider"></li>
                 <li {% if stories %}class="active" {% endif %}><a href="{% url 'stories' %}">Stories</a></li><li class="divider"></li>
-                <li {% if donations %}class="active" {% endif %}><a href="{% url 'ministry' %}">Ministry</a></li><li class="divider"></li>
-                <li {% if partners %}class="active" {% endif %}><a href="{% url 'partners' %}">Partners</a></li><li class="divider"></li>
+                <li class="{% if donations %}active {% endif %} has-dropdown"><a href="{% url 'ministry' %}">Ministry</a>
+                    <ul class="dropdown">
+                        <li {% if partners %}class="active" {% endif %}><a href="{% url 'partners' %}">Partners</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'events' event_id=1 %}" class="">Events</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li><li class="divider"></li>
                 <li {% if contact %}class="active" {% endif %}><a href="{% url 'contact' %}">Contact</a></li><li class="divider"></li>
             </ul>
             <!-- <ul class="right">

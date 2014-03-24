@@ -40,7 +40,7 @@ def stories(request):
                   "frontpages/stories.html",
                   context)
 
-def story(request, _id):
+def story(request, _id=None):
     current_story = get_object_or_404(Story, pk=_id)
     stories = Story.get_stories()
 
@@ -48,6 +48,24 @@ def story(request, _id):
                 "stories": stories}
     return render(request,
                   "frontpages/stories.html",
+                  context)
+
+def events(request, event_id=None):
+    events = Event.get_events()
+
+    if not events.exists():
+      return redirect(reverse("home"))
+      pass
+
+    if event_id:
+      current_event = get_object_or_404(Event, pk=event_id)
+    else:
+      current_event = Event.get_latest_event()
+
+    context = {"current_event": current_event,
+                "events": events}
+    return render(request,
+                  "frontpages/events.html",
                   context)
 
 def partners(request):

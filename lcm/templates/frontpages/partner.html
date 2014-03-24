@@ -3,24 +3,21 @@
 
 {% block content %}
 
-    <div class="container">
-        {% include "render_messages.html" %}
+    <div class="row top30">
+    {% include "render_messages.html" %}
+        <div class="large-12 columns">
+            <h2>{{ partner.title }}</h2>
 
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{ partner.title }}</h2>
-
-                <div class="">
-                    {% if partner.image %}
-                        <img class="featurette-image img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
-                    {% endif %}
-                </div>
-
-                <div class="description-padding">
-                    {{ partner.description|safe }}
-                </div>
-                </div>
+            <div class="large-12 columns">
+                {% if partner.image %}
+                    <img class="img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
+                {% endif %}
             </div>
+
+            <div class="large-12 columns top30">
+                {{ partner.description|safe }}
+            </div>
+        </div>
     </div>
 
 {% endblock content %}

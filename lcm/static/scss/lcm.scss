@@ -1,12 +1,28 @@
+@import "global";
 @import "settings";
 @import "foundation";
-@import "navbar";
 @import "footer";
 @import "content";
-
+@import "forms";
+@import "buttons";
+@import "images";
 
 .top-bar-section {
     ul {
         background-color: $dark-blue;
     }
+}
+
+body {
+  min-height: 500px;
+  height: 100%;
+}
+
+.side-nav {
+  @include side-nav(
+    $divider-color: '#ccc',
+    $font-size:1.2em,
+    $link-color:'#ccc',
+    $link-color-hover: '#444'
+  );
 }

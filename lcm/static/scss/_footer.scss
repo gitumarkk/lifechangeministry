@@ -1,16 +1,42 @@
 .lcm-footer-bottom {
-  background: #333; padding: 24px 0 10px;
-  .design-border { border-bottom: 1px solid #484848; padding-bottom: 5px; margin-bottom: 25px; }
-  a.lcm-logo { color: #858585; font-weight: normal; background: url("") no-repeat 0 3px; padding: 23px 0 0 0 !important; font-size: em-calc(16px); display: inline-block; width: 90px;
-    /* &:hover { @include opacity(0.8); } */
+  background: #333;
+  padding: 24px 0 10px;
+
+  .design-border { border-bottom: 1px solid #484848;
+    padding-bottom: 5px;
+    margin-bottom: 25px; }
+
+  a.lcm-logo {
+    color: #858585;
+    font-weight: normal;
+    background: url("") no-repeat 0 3px;
+    padding: 23px 0 0 0 !important;
+    font-size: em-calc(16px);
+    display: inline-block; width: 90px;
+    &:hover { @include opacity(0.8); }
   }
-  ul.lcm-links { margin: 0; display: inline-block; padding-bottom:0px;
-    li { display: block; float: left; margin-left: 6px; text-transform: uppercase; font-weight: 700; font-size: 0.75rem ;
-      a { color: #666; padding: 3px 6px;
+
+  ul.lcm-links {
+    margin: 0;
+    display: inline-block;
+    padding-bottom:0px;
+
+    li {
+      display: block;
+      float: left;
+      margin-left: 6px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem ;
+
+      a {
+        color: #666;
+        padding: 3px 6px;
         &:hover { color: #777; }
       }
     }
   }
+
   p.copyright {
     margin: 6px 0 0;
     font-size: 0.75rem;
@@ -32,7 +58,7 @@
         height: 50px;
         width: 50px;
         background: url("../img/icons/social.png") no-repeat center 0;
-        // &:hover { @include opacity(0.8); }
+        &:hover { @include opacity(0.8); }
         &.twitter { background-position: center 0; }
         &.facebook { background-position: center -200px; }
         &.mail { background-position: center -400px; }

@@ -1,0 +1,7 @@
+.button-white {
+    @include button(
+        $bg: #ffffff,
+        $padding: $button-med,
+        $full-width: true
+    );
+}

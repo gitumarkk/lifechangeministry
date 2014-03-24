@@ -9,52 +9,68 @@
         {% include "render_messages.html" %}
     </div>
 
-        <div class="row">
+        <div class="row top30">
             <div class="large-12 columns">
-                <img class="featurette-image img-responsive img-polaroid" src="{% static "img/content/front_1.jpg" %}"  data-src="" alt="Evariste Umba">
+                <img class="img-responsive img-polaroid" src="{% static "img/content/front page.png" %}"  data-src="" alt="Front Photo">
             </div>
         </div>
 
-
-        <div class="row">
+        <div class="row top30">
+            <div class="large-12 columns">
+                <p>
+                    "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you
+                    invited me in, I needed clothes and you clothed me, I was ill and you looke after me, I was in prison and you came to visit me."
+                    John 25:35,36
+                </p>
+            </div>
+        </div>
+        <div class="row top30">
             <div class="large-4 columns">
-                {% if latest_event.image %}
+                {% if latest_event %}
+                    <h2>Upcoming Event</h2>
+                    {% if latest_event.image %}
                     {% thumbnail latest_event.image "200x200" crop="center" as im %}
                         <img class="featurette-image img-responsive img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                     {% endthumbnail %}
-                {% else %}
-                    <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-                {% endif %}
+                    {% endif %}
 
-                <h2>Upcoming Event</h2>
-                {{ latest_event.description|safe|truncatewords_html:50 }}
-                {% if latest_event %}
-                    <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+                    <div class="top20 bottom20">{{ latest_event.title }}</div>
+                    {{ latest_event.description|safe|truncatewords_html:50 }}
+
+                    <p><a class="btn btn-default" href="{% url 'events' latest_event.id %}">View details &raquo;</a></p>
+                {% else %}
+                        <h2>No events coming up</h2>
                 {% endif %}
             </div>
 
             <div class="large-4 columns">
-                {% if latest_story.image %}
-                    {% thumbnail latest_story.image "200x200" crop="center" as im %}
-                        <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
-                    {% endthumbnail %}
-                {% else %}
-                    <!-- <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image"> -->
-                {% endif %}
-
-                <h2>Latest Story</h2>
-                {{ latest_story.description|safe|truncatewords_html:50 }}
-
                 {% if latest_story %}
+                    <h2>Latest Story</h2>
+                    {% if latest_story.image %}
+                        {% thumbnail latest_story.image "200x200" crop="center" as im %}
+                            <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                        {% endthumbnail %}
+                    {% else %}
+                        <!-- <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image"> -->
+                    {% endif %}
+
+                    <div class="top20 bottom20">{{ latest_story.title }}</div>
+
+                    {{ latest_story.description|safe|truncatewords_html:50 }}
                     <p><a class="btn btn-default" href="{% url 'story' latest_story.id %}">View details &raquo;</a></p>
                 {% endif %}
             </div>
 
             <div class="large-4 columns">
                 <!-- <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," height="100" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
-                <h2>Blog</h2>
+                <!-- <h2>Blog</h2>
                 <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="#">View details &raquo;</a></p> -->
+
+                <h2>Donations</h2>
+                <p>
+
+                </p>
             </div><!-- /.col-lg-4 -->
         </div>
 {% endblock content %}

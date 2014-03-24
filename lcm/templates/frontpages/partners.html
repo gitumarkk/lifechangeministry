@@ -4,13 +4,13 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container top30">
         {% include "render_messages.html" %}
 
         <div class="row">
-            <div class="col-md-12">
+            <ul class="large-block-grid-4">
                 {% for partner in partners %}
-                    <div class="col-md-4">
+                    <li class="">
                         <div class="">
                             <h2>{{ partner.title }}</h2>
                         </div>
@@ -27,7 +27,7 @@
                             {{ partner.description|safe|truncatewords:50 }}
                             <a href="{% url 'partner' partner.id %}">Read More</a>
                         </div>
-                    </div>
+                    </li>
                 {% endfor %}
             </div>
         </div>
