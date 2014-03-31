@@ -1,28 +1,15 @@
-@import "global";
-@import "settings";
+@import "config/global"; // Custom variables
+@import "config/colors"; // Custom color scheme
+@import "config/settings";
+
+/* Foundation 5 */
 @import "foundation";
-@import "footer";
-@import "content";
-@import "forms";
-@import "buttons";
-@import "images";
 
-.top-bar-section {
-    ul {
-        background-color: $dark-blue;
-    }
-}
+/* Site  */
+@import "site/footer";
+@import "site/content";
+@import "site/forms";
+@import "site/buttons";
+@import "site/images";
 
-body {
-  min-height: 500px;
-  height: 100%;
-}
 
-.side-nav {
-  @include side-nav(
-    $divider-color: '#ccc',
-    $font-size:1.2em,
-    $link-color:'#ccc',
-    $link-color-hover: '#444'
-  );
-}

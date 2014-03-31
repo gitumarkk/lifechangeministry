@@ -10,21 +10,40 @@
     </div>
 
         <div class="row top30">
-            <div class="large-12 columns">
+            <div class="large-3 columns">
+                <ul class="lcm-orbit-content" data-orbit>
+                    <li data-orbit-slide="headline-1">
+                        <div>
+                            <p>
+                                "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you
+                                invited me in, I needed clothes and you clothed me, I was ill and you looke after me, I was in prison and you came to visit me."
+                                Matthew 25:35,36
+                            </p>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-2">
+                        <div>
+                            <h2>Headline 2</h2>
+                            <h3>Subheadline</h3>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-3">
+                        <div>
+                            <h2>Headline 3</h2>
+                            <h3>Subheadline</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="large-9 columns">
                 <img class="img-responsive img-polaroid" src="{% static "img/content/front page.png" %}"  data-src="" alt="Front Photo">
             </div>
         </div>
 
-        <div class="row top30">
-            <div class="large-12 columns">
-                <p>
-                    "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you
-                    invited me in, I needed clothes and you clothed me, I was ill and you looke after me, I was in prison and you came to visit me."
-                    John 25:35,36
-                </p>
-            </div>
-        </div>
-        <div class="row top30">
+        <div class="row"><hr></div>
+
+        <div class="row top30 tiny-mce">
             <div class="large-4 columns">
                 {% if latest_event %}
                     <h2>Upcoming Event</h2>
@@ -34,12 +53,14 @@
                     {% endthumbnail %}
                     {% endif %}
 
-                    <div class="top20 bottom20">{{ latest_event.title }}</div>
+                    <div class="top20 bottom20">
+                        <b>{{ latest_event.title }}</b> on <b>{{ latest_event.event_date|date:"j F o" }}</b>
+                    </div>
                     {{ latest_event.description|safe|truncatewords_html:50 }}
 
                     <p><a class="btn btn-default" href="{% url 'events' latest_event.id %}">View details &raquo;</a></p>
                 {% else %}
-                        <h2>No events coming up</h2>
+                        <h2>No events up coming events </h2>
                 {% endif %}
             </div>
 
@@ -51,10 +72,10 @@
                             <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                         {% endthumbnail %}
                     {% else %}
-                        <!-- <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image"> -->
+
                     {% endif %}
 
-                    <div class="top20 bottom20">{{ latest_story.title }}</div>
+                    <div class="top20 bottom20"><b>{{ latest_story.title }}</b></div>
 
                     {{ latest_story.description|safe|truncatewords_html:50 }}
                     <p><a class="btn btn-default" href="{% url 'story' latest_story.id %}">View details &raquo;</a></p>
@@ -62,15 +83,75 @@
             </div>
 
             <div class="large-4 columns">
-                <!-- <img class="featurette-image img-responsive img-polaroid" src="data:image/png;base64," height="100" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
-                <!-- <h2>Blog</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p> -->
 
                 <h2>Donations</h2>
-                <p>
 
+                <p>
+                    Donations can be made to:
                 </p>
-            </div><!-- /.col-lg-4 -->
+                    <table>
+                        <tr>
+                            <td>Bank:</td>
+                            <td>Standard Bank</td>
+                        </tr>
+
+                        <tr>
+                            <td>Account Name:</td>
+                            <td>Life Change Ministry</td>
+                        </tr>
+
+                        <tr>
+                            <td>Account No:</td>
+                            <td>073637424</td>
+                        </tr>
+
+                        <tr>
+                            <td>Branch:</td>
+                            <td>Rondebosch</td>
+                        </tr>
+
+                        <tr>
+                            <td>Reference:</td>
+                            <td>Name of Person or Company</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+
+        <div class="row"><hr></div>
+
+        <div class="row top30">
+            <div class="large-6 columns">
+                <h3>Contact Details</h3>
+
+                <div class="panel">
+                    <p>
+                    507 The Oaks, Piers Road. Wynberg.
+                    </p>
+
+                    <p>
+                        Support group: Friday from 17:30-19h: 11 Flora court, Broad Road, Wynberg
+                    </p>
+                    <p>
+                        Support group and soup kitchen: Wednesday from 17:30-18:20: outside and inside
+                        the haven shelter (16a Piers Road, Wynberg).
+                    </p>
+                </div>
+            </div>
+
+        <div class="large-6 columns">
+            <h3>Talk to Us</h3>
+            <form class="form-horizontal contact-registration" method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {{ contact_form.as_p }}
+
+                <hr>
+                <div class="control-group">
+                    <div class="controls">
+                      <button class="btn btn-lg btn-primary btn-block" type="submit" >{% trans 'Submit' %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
         </div>
 {% endblock content %}

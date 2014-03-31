@@ -7,17 +7,20 @@
     {% include "render_messages.html" %}
         <div class="large-12 columns">
             <h2>{{ partner.title }}</h2>
-
-            <div class="large-12 columns">
-                {% if partner.image %}
-                    <img class="img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
-                {% endif %}
-            </div>
-
-            <div class="large-12 columns top30">
-                {{ partner.description|safe }}
-            </div>
         </div>
+
+        <div class="large-12 columns">
+            {% if partner.image %}
+                <img class="img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
+            {% endif %}
+        </div>
+
+        <div class="large-12 columns top30 tiny-mce">
+            <p>
+                {{ partner.description|safe }}
+            </p>
+        </div>
+
     </div>
 
 {% endblock content %}

@@ -2,18 +2,8 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
 
-/*
-$(function() {
-  $('.scroll').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});*/
+// Replacing all spans with arial with calibri
+
+$(document).ready(function() {
+  var $span = $(".tiny-mce").find("span").css({"font-family":"calibri"});
+});

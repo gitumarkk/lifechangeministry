@@ -1,8 +1,6 @@
 # Create your views here.
 from django.shortcuts import render, redirect, get_object_or_404
-from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
-from django.template import RequestContext
 from django.contrib import messages
 
 
@@ -15,9 +13,10 @@ from lcm.utils import contact_email
 def home(request):
     latest_story = Story.get_latest_story()
     latest_event = Event.get_latest_event()
-
+    contact_form = ContactForm()
     context = {"latest_story": latest_story,
-               "latest_event": latest_event}
+               "latest_event": latest_event,
+               "contact_form": contact_form}
     return render(request,
                   "frontpages/home.html",
                   context)
@@ -55,7 +54,6 @@ def events(request, event_id=None):
 
     if not events.exists():
       return redirect(reverse("home"))
-      pass
 
     if event_id:
       current_event = get_object_or_404(Event, pk=event_id)

@@ -91,7 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lcm',
-        'USER': 'postgres'
+        'USER': 'postgres',
+        'PASSWORD': 'postgres'
     }
 }
 
@@ -127,7 +128,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "lcm", "collectstatic")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "lcm", "static"),
-    STATIC_ROOT
 )
 
 
