@@ -61,9 +61,12 @@ body {
 
 
 .lcm-orbit {}
-.lcm-orbit-content li div {
-  color:white;
-  background:#2ba6cb;
-  padding:30px 40px;
-  h1,h2,h3,p {color:white;}
+.lcm-orbit-content {
+    background:#2ba6cb;
+
+    li div {
+    color:white;
+    padding:30px 40px;
+    h1,h2,h3,p {color:white;}
+  }
 }

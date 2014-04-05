@@ -9737,12 +9737,15 @@ body {
 }
 
 /* line 64, ../scss/site/_content.scss */
+.lcm-orbit-content {
+  background: #2ba6cb;
+}
+/* line 67, ../scss/site/_content.scss */
 .lcm-orbit-content li div {
   color: white;
-  background: #2ba6cb;
   padding: 30px 40px;
 }
-/* line 68, ../scss/site/_content.scss */
+/* line 70, ../scss/site/_content.scss */
 .lcm-orbit-content li div h1, .lcm-orbit-content li div h2, .lcm-orbit-content li div h3, .lcm-orbit-content li div p {
   color: white;
 }
