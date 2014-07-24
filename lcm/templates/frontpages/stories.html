@@ -24,17 +24,15 @@
                     <h2>{{ current_story.title }}</h2>
                 </div>
 
-                <div class="large-12 columns top30">
+                <div class="large-12 columns top30 content">
                     {% if current_story.image %}
-                        <img class="featurette-image img-responsive img-polaroid" src="{{current_story.image.url }}" alt="Generic placeholder image">
+                        <img class="featurette-image img-responsive img-polaroid img-textwrap" src="{{current_story.image.url }}" alt="Generic placeholder image">
                     {% endif %}
+
+                    <p class="tiny-mce">
+                        {{ current_story.description|safe }}
+                    </p>
                 </div>
-
-                <div class="large-12 columns top30 tiny-mce">
-                    {{ current_story.description|safe }}
-                </div>
-
-
             </div>
         </div>
     </div>

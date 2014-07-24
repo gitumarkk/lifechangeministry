@@ -32,7 +32,7 @@
             </div>
 
             <div class="large-9 columns">
-                <img class="img-responsive img-polaroid" src="{% static "img/content/front page.png" %}"  data-src="" alt="Front Photo">
+                <img class="img-responsive-full img-polaroid" src="{% static "img/content/front page.png" %}"  data-src="" alt="Front Photo">
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                     <h2>Upcoming Event</h2>
                     {% if latest_event.image %}
                     {% thumbnail latest_event.image "200x200" crop="center" as im %}
-                        <img class="featurette-image img-responsive img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                        <img class="featurette-image img-responsive-full img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                     {% endthumbnail %}
                     {% endif %}
 
@@ -64,7 +64,7 @@
                     <h2>Latest Story</h2>
                     {% if latest_story.image %}
                         {% thumbnail latest_story.image "200x200" crop="center" as im %}
-                            <img class="featurette-image img-responsive img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                            <img class="featurette-image img-responsive-full img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                         {% endthumbnail %}
                     {% else %}
 

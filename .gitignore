@@ -41,3 +41,4 @@ lcm/productions_settings.py
 venv
 media
 collectstatic
+.vagrant

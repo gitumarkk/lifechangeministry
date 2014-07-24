@@ -9,14 +9,12 @@
             <h2>{{ partner.title }}</h2>
         </div>
 
-        <div class="large-12 columns">
+        <div class="large-12 columns top30 content">
             {% if partner.image %}
-                <img class="img-responsive img-polaroid" src="{{ partner.image.url }}" alt="Generic placeholder image">
+                <img class="featurette-image img-responsive img-polaroid img-textwrap" src="{{ partner.image.url }}" alt="Generic placeholder image">
             {% endif %}
-        </div>
 
-        <div class="large-12 columns top30 tiny-mce">
-            <p>
+            <p class="tiny-mce">
                 {{ partner.description|safe }}
             </p>
         </div>

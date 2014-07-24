@@ -18,7 +18,7 @@
                         <div class="">
                             {% if partner.image %}
                                 {% thumbnail partner.image "300x300" crop="center" as im %}
-                                    <img class="featurette-image img-responsive img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                                    <img class="featurette-image img-responsive-full img-polaroid " src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                                 {% endthumbnail %}
                             {% endif %}
                         </div>

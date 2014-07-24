@@ -12,9 +12,27 @@ img {
   vertical-align: middle;
 }
 
+.img-responsive-full {
+      max-width: 100%;
+      min-width: 100%;
+      display: block;
+      height: auto;
+}
+
 .img-responsive {
   display: block;
   height: auto;
-  max-width: 100%;
-  min-width: 100%;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.img-textwrap {
+    margin: 20px;
+    float:left;
+}
+
+
+@media (max-width: 768px) {
+    max-width: 100%;
+    min-width: 100%;
 }

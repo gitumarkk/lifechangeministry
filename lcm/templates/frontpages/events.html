@@ -21,17 +21,15 @@
                     <h2>{{ current_event.title }} on {{ current_event.event_date|date:"j F o" }}</h2>
                 </div>
 
-                <div class="large-12 columns">
+                <div class="large-12 columns content">
                     {% if current_event.image %}
-                        <img class="featurette-image img-responsive img-polaroid" src="{{current_event.image.url }}" alt="Generic placeholder image">
+                        <img class="featurette-image img-responsive img-polaroid img-textwrap" src="{{current_event.image.url }}" alt="Generic placeholder image">
                     {% endif %}
+
+                    <p class="tiny-mce">
+                        {{ current_event.description|safe }}
+                    </p>
                 </div>
-
-                <div class="large-12 columns top30 tiny-mce">
-                    {{ current_event.description|safe }}
-                </div>
-
-
             </div>
         </div>
     </div>

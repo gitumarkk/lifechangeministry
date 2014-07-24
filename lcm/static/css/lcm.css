@@ -9663,7 +9663,13 @@ body {
   height: 100%;
 }
 
-/* line 21, ../scss/site/_content.scss */
+/* line 22, ../scss/site/_content.scss */
+.content p {
+  margin: 0px 0px !important;
+  padding: 4px;
+}
+
+/* line 28, ../scss/site/_content.scss */
 .side-nav {
   display: block;
   margin: 0;
@@ -9700,52 +9706,54 @@ body {
   list-style: none;
   border-top-color: "#EEE9E9";
 }
-/* line 29, ../scss/site/_content.scss */
+/* line 36, ../scss/site/_content.scss */
 .side-nav li {
   margin: 0;
   padding: 0px 10px;
 }
-/* line 33, ../scss/site/_content.scss */
+/* line 40, ../scss/site/_content.scss */
 .side-nav li a {
   padding: 0.375rem 0;
 }
-/* line 36, ../scss/site/_content.scss */
+/* line 43, ../scss/site/_content.scss */
 .side-nav li a:hover {
   font-weight: bold;
 }
-/* line 41, ../scss/site/_content.scss */
+/* line 48, ../scss/site/_content.scss */
 .side-nav li:hover {
   background-color: #008cba;
 }
-/* line 45, ../scss/site/_content.scss */
+/* line 52, ../scss/site/_content.scss */
 .side-nav li:disabled {
   pointer-events: none;
   cursor: not-allowed;
 }
-/* line 50, ../scss/site/_content.scss */
+/* line 57, ../scss/site/_content.scss */
 .side-nav li:disabled:hover {
   background-color: white;
 }
-/* line 55, ../scss/site/_content.scss */
+/* line 62, ../scss/site/_content.scss */
 .side-nav .active {
   background-color: #1cc7ff;
 }
 
-/* line 60, ../scss/site/_content.scss */
+/* line 67, ../scss/site/_content.scss */
 .side-nav li.divider {
   margin: 16px 0px;
 }
 
-/* line 64, ../scss/site/_content.scss */
+/* line 71, ../scss/site/_content.scss */
 .lcm-orbit-content {
   background: #2ba6cb;
+  overflow-y: none;
 }
-/* line 67, ../scss/site/_content.scss */
+/* line 75, ../scss/site/_content.scss */
 .lcm-orbit-content li div {
+  list-style: none;
   color: white;
   padding: 30px 40px;
 }
-/* line 70, ../scss/site/_content.scss */
+/* line 79, ../scss/site/_content.scss */
 .lcm-orbit-content li div h1, .lcm-orbit-content li div h2, .lcm-orbit-content li div h3, .lcm-orbit-content li div p {
   color: white;
 }
@@ -9854,9 +9862,28 @@ img {
 }
 
 /* line 15, ../scss/site/_images.scss */
+.img-responsive-full {
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* line 22, ../scss/site/_images.scss */
 .img-responsive {
   display: block;
   height: auto;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+/* line 29, ../scss/site/_images.scss */
+.img-textwrap {
+  margin: 20px;
+  float: left;
+}
+
+@media (max-width: 768px) {
   max-width: 100%;
   min-width: 100%;
 }

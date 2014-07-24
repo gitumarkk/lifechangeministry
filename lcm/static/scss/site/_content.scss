@@ -18,6 +18,13 @@ body {
   height: 100%;
 }
 
+.content {
+    p {
+        margin: 0px 0px !important;
+        padding: 4px;
+    }
+}
+
 .side-nav {
   @include side-nav(
     $divider-color: '#EEE9E9',
@@ -60,13 +67,25 @@ body {
 .side-nav li.divider { margin: 16px 0px; }
 
 
-.lcm-orbit {}
+// .lcm-orbit {}
 .lcm-orbit-content {
     background:#2ba6cb;
+    overflow-y: none;
 
     li div {
-    color:white;
-    padding:30px 40px;
-    h1,h2,h3,p {color:white;}
-  }
+        list-style: none;
+        color:white;
+        padding:30px 40px;
+        h1,h2,h3,p {color:white;}
+    }
+
+    // ul {
+    //     list-style: none;
+    //     li div {
+    //         list-style: none;
+    //         color:white;
+    //         padding:30px 40px;
+    //         h1,h2,h3,p {color:white;}
+    //     }
+    // }
 }
