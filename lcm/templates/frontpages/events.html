@@ -11,14 +11,14 @@
                 <h4>View Stories</h4>
                 <ul class="side-nav">
                     {% for event in events %}
-                        <li class="{% if current_event.id == event.id %}active{% endif %}"><a href="{% url 'events' event_id=event.id %}" {% if current_event.id == event.id %}disabled="disabled"{% endif %} >{{ event.title }} </a></li>
+                        <li class="{% if current_event.id == event.id %}active{% endif %}"><a href="{% url 'event' event_id=event.id %}" {% if current_event.id == event.id %}disabled="disabled"{% endif %} >{{ event.title }} </a></li>
                     {% endfor %}
                 </ul>
             </div>
 
             <div class="large-9 columns">
                 <div class="large-12 columns">
-                    <h2>{{ current_event.title }} on {{ current_event.event_date|date:"j F o" }}</h2>
+                    <h2>{{ current_event.get_event_date }}</h2>
                 </div>
 
                 <div class="large-12 columns content">

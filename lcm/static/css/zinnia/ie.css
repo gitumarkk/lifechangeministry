@@ -1,0 +1,109 @@
+/* line 1, ../../scss/zinnia/ie.scss */
+.zinnia {
+  text-align: center;
+}
+/* line 4, ../../scss/zinnia/ie.scss */
+* html .zinnia legend {
+  margin: 0px -8px 16px 0;
+  padding: 0;
+}
+/* line 11, ../../scss/zinnia/ie.scss */
+html > .zinnia p code {
+  *white-space: normal;
+}
+/* line 16, ../../scss/zinnia/ie.scss */
+.zinnia .container {
+  text-align: left;
+}
+/* line 20, ../../scss/zinnia/ie.scss */
+.zinnia sup {
+  vertical-align: text-top;
+}
+/* line 22, ../../scss/zinnia/ie.scss */
+.zinnia sub {
+  vertical-align: text-bottom;
+}
+/* line 24, ../../scss/zinnia/ie.scss */
+.zinnia hr {
+  margin: -8px auto 11px;
+}
+/* line 26, ../../scss/zinnia/ie.scss */
+.zinnia img {
+  -ms-interpolation-mode: bicubic;
+}
+/* line 28, ../../scss/zinnia/ie.scss */
+.zinnia fieldset {
+  padding-top: 0;
+}
+/* line 30, ../../scss/zinnia/ie.scss */
+.zinnia legend {
+  margin-top: -0.2em;
+  margin-bottom: 1em;
+  margin-left: -0.5em;
+}
+/* line 34, ../../scss/zinnia/ie.scss */
+.zinnia fieldset, .zinnia #IE8#HACK {
+  padding-top: 1.4em;
+}
+/* line 35, ../../scss/zinnia/ie.scss */
+.zinnia legend, .zinnia #IE8#HACK {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 36, ../../scss/zinnia/ie.scss */
+.zinnia textarea {
+  overflow: auto;
+}
+/* line 38, ../../scss/zinnia/ie.scss */
+.zinnia label {
+  position: relative;
+  top: -0.25em;
+}
+/* line 42, ../../scss/zinnia/ie.scss */
+.zinnia input.text {
+  margin: 0.5em 0;
+  background-color: white;
+  border: 1px solid #bbbbbb;
+}
+/* line 46, ../../scss/zinnia/ie.scss */
+.zinnia input.text:focus {
+  border: 1px solid #666666;
+}
+/* line 48, ../../scss/zinnia/ie.scss */
+.zinnia input.title {
+  margin: 0.5em 0;
+  background-color: white;
+  border: 1px solid #bbbbbb;
+}
+/* line 52, ../../scss/zinnia/ie.scss */
+.zinnia input.title:focus {
+  border: 1px solid #666666;
+}
+/* line 54, ../../scss/zinnia/ie.scss */
+.zinnia input.checkbox {
+  position: relative;
+  top: 0.25em;
+}
+/* line 57, ../../scss/zinnia/ie.scss */
+.zinnia input.radio {
+  position: relative;
+  top: 0.25em;
+}
+/* line 60, ../../scss/zinnia/ie.scss */
+.zinnia input.button {
+  position: relative;
+  top: 0.25em;
+}
+/* line 63, ../../scss/zinnia/ie.scss */
+.zinnia textarea {
+  margin: 0.5em 0;
+}
+/* line 65, ../../scss/zinnia/ie.scss */
+.zinnia select {
+  margin: 0.5em 0;
+}
+/* line 67, ../../scss/zinnia/ie.scss */
+.zinnia button {
+  position: relative;
+  top: 0.25em;
+}

@@ -11,19 +11,19 @@
             <!-- Right Nav Section -->
 
             <ul class="left"><li class="divider"></li>
-                <li {% if home %}class="active" {% endif %}><a href="{% url 'home' %}">Home</a></li><li class="divider"></li>
-                <li class="{% if about %} active {% endif %}"><a href="{% url 'about' %}">About</a>
-                </li><li class="divider"></li>
-                <li {% if stories %}class="active" {% endif %}><a href="{% url 'stories' %}">Stories</a></li><li class="divider"></li>
-                <li class="{% if donations %}active {% endif %} has-dropdown"><a href="{% url 'ministry' %}">Ministry</a>
+                <li {% if home_is_active %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li><li class="divider"></li>
+                <li {% if about_is_active %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li><li class="divider"></li>
+                <li {% if ministry_is_active %}class="active" {% endif %}><a href="{% url 'ministry' %}">Ministry</a></li><li class="divider"></li>
+                <li {% if events_nav_is_active %}class="active"{% endif %}><a href="{% url 'events' %}" class="">Events</a></li><li class="divider"></li>
+                <li {% if blog_is_active %}class="active"{% endif %}><a href="{% url 'zinnia_entry_archive_index' %}">Blog</a></li><li class="divider"></li>
+
+                <!--<li class="{% if donations %}active {% endif %} has-dropdown"><a href="{% url 'ministry' %}">Ministry</a>
                     <ul class="dropdown">
                         <li {% if partners %}class="active" {% endif %}><a href="{% url 'partners' %}">Partners</a></li>
                         <li class="divider"></li>
-                        <li {% if events_nav %}class="active" {% endif %}><a href="{% url 'events' event_id=1 %}" class="">Events</a></li>
-                        <li class="divider"></li>
                     </ul>
-                </li><li class="divider"></li>
-                <li {% if contact %}class="active" {% endif %}><a href="{% url 'contact' %}">Contact</a></li><li class="divider"></li>
+                </li><li class="divider"></li>-->
+                <li {% if contact_is_active %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact</a></li><li class="divider"></li>
             </ul>
         </section>
     </nav>

@@ -49,31 +49,33 @@
                     {% endif %}
 
                     <div class="top20 bottom20">
-                        <b>{{ latest_event.title }}</b> on <b>{{ latest_event.event_date|date:"j F o" }}</b>
+                        <b>{{ latest_event.get_event_date }}</b>
                     </div>
                     {{ latest_event.description|safe|truncatewords_html:50 }}
 
-                    <p><a class="btn btn-default" href="{% url 'events' latest_event.id %}">View details &raquo;</a></p>
+                    <p><a class="btn btn-default" href="{% url 'event' latest_event.id %}">View details &raquo;</a></p>
                 {% else %}
                         <h2>No up coming events </h2>
                 {% endif %}
             </div>
 
             <div class="large-4 columns">
-                {% if latest_story %}
-                    <h2>Latest Story</h2>
-                    {% if latest_story.image %}
-                        {% thumbnail latest_story.image "200x200" crop="center" as im %}
-                            <img class="featurette-image img-responsive-full img-polaroid" src="{{latest_story.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                {% if latest_blog %}
+                    <h2>Latest Blog</h2>
+                    {% if latest_blog.image %}
+                        {% thumbnail latest_blog.image "200x200" crop="center" as im %}
+                            <img class="featurette-image img-responsive-full img-polaroid" src="{{latest_blog.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
                         {% endthumbnail %}
                     {% else %}
 
                     {% endif %}
 
-                    <div class="top20 bottom20"><b>{{ latest_story.title }}</b></div>
+                    <div class="top20 bottom20"><b>{{ latest_blog.title|capfirst }}</b></div>
 
-                    {{ latest_story.description|safe|truncatewords_html:50 }}
-                    <p><a class="btn btn-default" href="{% url 'story' latest_story.id %}">View details &raquo;</a></p>
+                    {{ latest_blog.html_content|safe|truncatewords_html:50 }}
+                    <p><a class="btn btn-default" href="{{ latest_blog.get_absolute_url }}">Continue reading &raquo;</a></p>
+                {% else %}
+                        <h2>No current blog.</h2>
                 {% endif %}
             </div>
 
