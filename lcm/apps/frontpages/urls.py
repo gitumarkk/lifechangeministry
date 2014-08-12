@@ -19,9 +19,13 @@ urlpatterns = patterns('',
         'lcm.apps.frontpages.views.story',
         name='story'),
 
-    url(r'^events/(?P<event_id>\d+)/$',
+    url(r'^events/$',
         'lcm.apps.frontpages.views.events',
         name='events'),
+
+    url(r'^events/(?P<event_id>\d+)/$',
+        'lcm.apps.frontpages.views.event',
+        name='event'),
 
     url(r'^partners/$',
         'lcm.apps.frontpages.views.partners',
