@@ -16,7 +16,11 @@ from zinnia.models.entry import Entry
 def home(request):
     latest_event = Event.get_latest_event()
     queryset = Entry.published.all
-    latest_blog = queryset().latest()
+
+    latest_blog = None
+
+    if queryset().exists():
+        latest_blog = queryset().latest()
 
     contact_form = ContactForm()
     context = {"latest_blog": latest_blog,
