@@ -9,12 +9,17 @@ from lcm.apps.backend.models import Event, Story, Partner
 from lcm.apps.frontpages.forms import ContactForm
 from lcm.utils import contact_email
 
+# Zinnia
+from zinnia.models.entry import Entry
+
 
 def home(request):
-    latest_story = Story.get_latest_story()
     latest_event = Event.get_latest_event()
+    queryset = Entry.published.all
+    latest_blog = queryset().latest()
+
     contact_form = ContactForm()
-    context = {"latest_story": latest_story,
+    context = {"latest_blog": latest_blog,
                "latest_event": latest_event,
                "contact_form": contact_form}
     return render(request,
@@ -49,7 +54,16 @@ def story(request, _id=None):
                   "frontpages/stories.html",
                   context)
 
-def events(request, event_id=None):
+
+def events(request):
+  events = Event.get_events()
+  context = {"events": events}
+  return render(request,
+                "frontpages/event.html",
+                context)
+
+
+def event(request, event_id=None):
     events = Event.get_events()
 
     if not events.exists():
