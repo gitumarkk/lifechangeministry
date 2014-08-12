@@ -10,5 +10,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8001, host: 8001
   config.vm.network :forwarded_port, guest: 8002, host: 8002
 
-  config.vm.synced_folder "../../lifechangeministry", "/srv/lifechangeministry"
+  config.vm.synced_folder ".", "/srv/lifechangeministry"
 end
