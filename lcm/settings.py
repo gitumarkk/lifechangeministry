@@ -36,16 +36,24 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    # 'django.contrib.sitemaps',
+    'django.contrib.comments',
 
     # Third Party
     'south',  # data migration
     'django_nose',  # unittesting
+    # 'django_comments',
+    'mptt',
+    'tagging',
+    'zinnia',
 
     # Project
     'lcm.apps.frontpages',
     'lcm.apps.backend',
     'tinymce',
     'sorl.thumbnail',
+    # 'zinnia_bootstrap',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,13 +69,16 @@ MIDDLEWARE_CLASSES = (
 # TEMPLATES CONFIGURATION
 # ========================================================
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "lcm.context_processors.highlight_active_menu")
+    'zinnia.context_processors.version',
+    "lcm.context_processors.highlight_active_menu",
+)
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -75,6 +86,8 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, "lcm", "templates"),
 )
+
+# TEMPLATE_LOADERS = ('app_namespace.Loader',)
 
 # END OF TEMPLATES CONFIGURATION
 # ========================================================
@@ -184,6 +197,37 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+
+SITE_ID = 1
+
+ADMINS = (
+    ('Mark Gituma', 'gitumarkk+lcmerror@gmail.com'),
+)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
 
 # Import production settings
 try:
