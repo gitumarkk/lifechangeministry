@@ -205,6 +205,8 @@ ADMINS = (
     ('Mark Gituma', 'gitumarkk+lcmerror@gmail.com'),
 )
 
+SERVER_EMAIL = "lifechange@95.85.22.73.com"
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
