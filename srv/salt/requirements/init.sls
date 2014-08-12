@@ -5,3 +5,4 @@ packages:
             - python-virtualenv
             - python-dev
             - libpq-dev
+            - libjpeg-dev

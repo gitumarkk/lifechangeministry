@@ -1,9 +1,9 @@
 dbengine: django.db.backends.postgresql_psycopg2
-dbname:
-dbuser:
-dbpassword:
+dbname: lcm
+dbuser: postgres
+dbpassword: postgres
 dbhost: localhost
 dbport: 5432
 secret_key: secret_key
-user:
-MANDRILL_KEY:
+user: vagrant
+MANDRILL_KEY: ""

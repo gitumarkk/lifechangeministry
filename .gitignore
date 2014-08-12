@@ -39,3 +39,6 @@ nosetests.xml
 lcm/productions_settings.py
 .venv
 venv
+media
+collectstatic
+.vagrant

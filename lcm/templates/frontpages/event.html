@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block content %}
+
+    <div class="container top30">
+        {% include "render_messages.html" %}
+
+        <div class="row">
+            {% for event in events %}
+                <div class="item large-4 columns tiny-mce">
+                    {% if event.image %}
+                        {% thumbnail event.image "200x200" crop="center" as im %}
+                            <img class="featurette-image img-responsive-full img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                        {% endthumbnail %}
+                    {% endif %}
+
+                    <div class="top20 bottom20"><h5>{{ event.get_event_date }}</h5></div>
+                    {{ event.description|safe|truncatewords_html:50 }}
+
+                    <p><a class="btn btn-default" href="{% url 'event' event.id %}">View details &raquo;</a></p>
+                </div>
+
+            {% empty %}
+
+            <h2>Sorry no events available</h2>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

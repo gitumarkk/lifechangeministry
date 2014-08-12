@@ -4,6 +4,7 @@ base:  # What environment this is for
         - nginx  ## Tells salt to apply the nginx state to these hosts
         - git ##
         - postgresql
+        - memcached
         - django
         - supervisor
 

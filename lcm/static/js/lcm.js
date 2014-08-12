@@ -1,14 +1,11 @@
-$(function() {
-  $('.scroll').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
+// Foundation JavaScript
+// Documentation can be found at: http://foundation.zurb.com/docs
+$(document).foundation();
+
+// Replacing all spans with arial with calibri
+
+$(document).ready(function() {
+  var $tiny_mce = $(".tiny-mce");
+  var $span = $tiny_mce.find("span");
+  $span.css({"font-family":"calibri", "font-size": "16px", "line-height": "150%"});
 });

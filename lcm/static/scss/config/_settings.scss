@@ -1,0 +1,41 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// =======================================
+// MY SETTINGS
+// =======================================
+
+// COLOR
+
+//
+// FOUNDATION SETTINGS
+//
+
+// This is the default html and body font-size for the base rem value.
+// $rem-base: 16px;
+
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "foundation/functions";
+
+// TOPBAR
+$topbar-bg-color: $home-page-navbar;
+$topbar-bg: $topbar-bg-color;
+
+// FONTS
+$calibri: "Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif";
+$default-font : $calibri;
+$paragraph-font-family: $default-font;
+$body-font-family: $default-font;
+
+
+// SIDE NAV
+$side-nav-link-color: $primary-color;
+$side-nav-link-color-active: scale-color($white, $lightness: 0%);
+$side-nav-link-color-hover: scale-color($white, $lightness: 0%);
+$side-nav-font-size: rem-calc(18);
+$side-nav-font-weight: normal;
+
+// SLIDER
+$wrapper-class: "slideshow-wrapper";
+$preloader-class: "preloader";

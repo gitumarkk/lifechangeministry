@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="row top30">
+    {% include "render_messages.html" %}
+        <div class="large-12 columns">
+            <h2>{{ partner.title }}</h2>
+        </div>
+
+        <div class="large-12 columns top30 content">
+            {% if partner.image %}
+                <img class="featurette-image img-responsive img-polaroid img-textwrap" src="{{ partner.image.url }}" alt="Generic placeholder image">
+            {% endif %}
+
+            <p class="tiny-mce">
+                {{ partner.description|safe }}
+            </p>
+        </div>
+
+    </div>
+
+{% endblock content %}

@@ -2,7 +2,7 @@ include:
     - requirements
     - postgresql
 
-/srv/lifechangeministry/venv:
+/srv/venv:
     virtualenv.managed:
         - system_site_packages: False
         - runas: {{ pillar["user"]}}  # Who to run it as
@@ -13,7 +13,6 @@ include:
             - pkg: python-virtualenv
             - pkg: libpq-dev
 
-
 djangouser: # Name of the package or service
     postgres_user.present:
         - name: {{ pillar["dbuser"]}}
@@ -21,7 +20,6 @@ djangouser: # Name of the package or service
         - runas: postgres
         - require:
             - service: postgresql
-
 
 djangodb:
     postgres_database.present:
@@ -34,7 +32,6 @@ djangodb:
         - runas: postgres
         - require:
             - postgres_user: djangouser
-
 
 production_settings.py:
     file.managed:

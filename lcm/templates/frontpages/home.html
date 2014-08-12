@@ -1,83 +1,154 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load i18n %}
+{% load thumbnail %}
 
 {% block content %}
 
-    <div class="container">
+    <div class="row">
         {% include "render_messages.html" %}
     </div>
 
-    <div id="myCarousel" class="carousel slide">
-    <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-large btn-primary" href="#">Sign up today</a></p>
-                    </div>
-                </div>
+        <div class="row top30">
+            <div class="large-3 columns">
+                <ul class="lcm-orbit-content" data-orbit>
+                    <li data-orbit-slide="headline-1">
+                        <div>
+                            <p>
+                                Our Cause believes that the solution about Drug Abuse is "Healthy Diets and Support Group" and Homelessness is "Family Reconciliation and Job"
+                            </p>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-2">
+                        <div>
+                            <p>
+                                "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you
+                                invited me in, I needed clothes and you clothed me, I was ill and you looke after me, I was in prison and you came to visit me."
+                                Matthew 25:35,36
+                            </p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="item">
-                <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Second slide" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
-                    </div>
-                </div>
+
+            <div class="large-9 columns">
+                <img class="img-responsive-full img-polaroid" src="{% static "img/content/front page.png" %}"  data-src="" alt="Front Photo">
             </div>
         </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
 
+        <div class="row"><hr></div>
 
+        <div class="row top30 tiny-mce">
+            <div class="large-4 columns">
+                {% if latest_event %}
+                    <h2>Upcoming Event</h2>
+                    {% if latest_event.image %}
+                    {% thumbnail latest_event.image "200x200" crop="center" as im %}
+                        <img class="featurette-image img-responsive-full img-polaroid" src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                    {% endthumbnail %}
+                    {% endif %}
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+                    <div class="top20 bottom20">
+                        <b>{{ latest_event.get_event_date }}</b>
+                    </div>
+                    {{ latest_event.description|safe|truncatewords_html:50 }}
 
-    <div class="container marketing">
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-                <h2>Upcoming Event</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-                <h2>Latest Story</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-                <h2>Blog</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-    </div>
+                    <p><a class="btn btn-default" href="{% url 'event' latest_event.id %}">View details &raquo;</a></p>
+                {% else %}
+                        <h2>No up coming events </h2>
+                {% endif %}
+            </div>
 
+            <div class="large-4 columns">
+                {% if latest_blog %}
+                    <h2>Latest Blog</h2>
+                    {% if latest_blog.image %}
+                        {% thumbnail latest_blog.image "200x200" crop="center" as im %}
+                            <img class="featurette-image img-responsive-full img-polaroid" src="{{latest_blog.image.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                        {% endthumbnail %}
+                    {% else %}
+
+                    {% endif %}
+
+                    <div class="top20 bottom20"><b>{{ latest_blog.title|capfirst }}</b></div>
+
+                    {{ latest_blog.html_content|safe|truncatewords_html:50 }}
+                    <p><a class="btn btn-default" href="{{ latest_blog.get_absolute_url }}">Continue reading &raquo;</a></p>
+                {% else %}
+                        <h2>No current blog.</h2>
+                {% endif %}
+            </div>
+
+            <div class="large-4 columns">
+
+                <h2>Donations</h2>
+
+                <p>
+                    Donations can be made to:
+                </p>
+                    <table>
+                        <tr>
+                            <td>Bank:</td>
+                            <td>Standard Bank</td>
+                        </tr>
+
+                        <tr>
+                            <td>Account Name:</td>
+                            <td>Life Change Ministry</td>
+                        </tr>
+
+                        <tr>
+                            <td>Account No:</td>
+                            <td>073637424</td>
+                        </tr>
+
+                        <tr>
+                            <td>Branch:</td>
+                            <td>Rondebosch</td>
+                        </tr>
+
+                        <tr>
+                            <td>Reference:</td>
+                            <td>Name of Person or Company</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+
+        <div class="row"><hr></div>
+
+        <div class="row top30">
+            <div class="large-6 columns">
+                <h3>Contact Details</h3>
+
+                <div class="panel">
+                    <p>
+                    507 The Oaks, Piers Road. Wynberg.
+                    </p>
+
+                    <p>
+                        Support group: Friday from 17:30-19h: 11 Flora court, Broad Road, Wynberg
+                    </p>
+                    <p>
+                        Support group and soup kitchen: Wednesday from 17:30-18:20: outside and inside
+                        the haven shelter (16a Piers Road, Wynberg).
+                    </p>
+                </div>
+            </div>
+
+        <div class="large-6 columns">
+            <h3>Talk to Us</h3>
+            <form class="form-horizontal contact-registration" method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {{ contact_form.as_p }}
+
+                <hr>
+                <div class="control-group">
+                    <div class="controls">
+                      <button class="btn btn-lg btn-primary btn-block" type="submit" >{% trans 'Submit' %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
 {% endblock content %}

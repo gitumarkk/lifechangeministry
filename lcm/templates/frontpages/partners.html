@@ -1,10 +1,36 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load thumbnail %}
 
 {% block content %}
 
-    <div class="container">
+    <div class="container top30">
         {% include "render_messages.html" %}
+
+        <div class="row">
+            <ul class="large-block-grid-4">
+                {% for partner in partners %}
+                    <li class="">
+                        <div class="">
+                            <h2>{{ partner.title }}</h2>
+                        </div>
+
+                        <div class="">
+                            {% if partner.image %}
+                                {% thumbnail partner.image "300x300" crop="center" as im %}
+                                    <img class="featurette-image img-responsive-full img-polaroid " src="{{ im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                                {% endthumbnail %}
+                            {% endif %}
+                        </div>
+
+                        <div class="tiny-mce">
+                            {{ partner.description|safe|truncatewords:50 }}
+                            <a href="{% url 'partner' partner.id %}">Read More</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
 {% endblock content %}

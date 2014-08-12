@@ -1,0 +1,101 @@
+/* line 1, ../../scss/zinnia/dashboard_zinnia.scss */
+body.dashboard #content {
+  width: 100%;
+}
+
+/* line 5, ../../scss/zinnia/dashboard_zinnia.scss */
+.module {
+  width: 48%;
+}
+/* line 7, ../../scss/zinnia/dashboard_zinnia.scss */
+.module table {
+  width: 100%;
+}
+/* line 9, ../../scss/zinnia/dashboard_zinnia.scss */
+.module table th, .module table td {
+  font-size: 12px;
+}
+
+/* line 15, ../../scss/zinnia/dashboard_zinnia.scss */
+.managelink {
+  background: url('/img/manage.png') no-repeat scroll 0 0.2em transparent;
+  padding-left: 12px;
+}
+
+/* line 20, ../../scss/zinnia/dashboard_zinnia.scss */
+.previewlink {
+  background: url('/img/preview.png') no-repeat scroll 0 0.2em transparent;
+  padding-left: 12px;
+}
+
+/* line 25, ../../scss/zinnia/dashboard_zinnia.scss */
+input, textarea, select {
+  border: 1px solid #cccccc;
+}
+
+/* line 29, ../../scss/zinnia/dashboard_zinnia.scss */
+.vTextField, .vLargeTextField {
+  width: 25em;
+}
+
+/* line 33, ../../scss/zinnia/dashboard_zinnia.scss */
+.required label, label.required {
+  color: #333333 !important;
+  font-weight: bold !important;
+}
+
+/* line 38, ../../scss/zinnia/dashboard_zinnia.scss */
+.button {
+  float: left;
+  margin-right: 5px;
+}
+
+/* line 44, ../../scss/zinnia/dashboard_zinnia.scss */
+#contents th {
+  width: 50%;
+}
+/* line 47, ../../scss/zinnia/dashboard_zinnia.scss */
+#contents td {
+  padding-left: 10px;
+}
+/* line 49, ../../scss/zinnia/dashboard_zinnia.scss */
+#contents td a {
+  font-weight: bold;
+}
+
+/* line 56, ../../scss/zinnia/dashboard_zinnia.scss */
+#quickpost th {
+  width: 20%;
+  vertical-align: middle;
+}
+/* line 60, ../../scss/zinnia/dashboard_zinnia.scss */
+#quickpost td {
+  width: 100%;
+}
+
+/* line 66, ../../scss/zinnia/dashboard_zinnia.scss */
+#comments th {
+  width: 10%;
+}
+/* line 69, ../../scss/zinnia/dashboard_zinnia.scss */
+#comments td {
+  width: 100%;
+  white-space: normal;
+}
+/* line 72, ../../scss/zinnia/dashboard_zinnia.scss */
+#comments td a {
+  display: inline;
+}
+
+/* line 79, ../../scss/zinnia/dashboard_zinnia.scss */
+#drafts th, #linkbacks th, #comments th {
+  font-weight: normal;
+}
+/* line 81, ../../scss/zinnia/dashboard_zinnia.scss */
+#drafts th a, #linkbacks th a, #comments th a {
+  font-weight: bold;
+}
+/* line 84, ../../scss/zinnia/dashboard_zinnia.scss */
+#drafts th abbr, #linkbacks th abbr, #comments th abbr {
+  color: #666666;
+}

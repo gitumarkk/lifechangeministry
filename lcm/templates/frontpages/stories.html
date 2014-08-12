@@ -3,8 +3,38 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container top30">
         {% include "render_messages.html" %}
+
+        <div class="row">
+            <div class="large-3 columns">
+                <h4>View Stories</h4>
+                <ul class="side-nav top30">
+                    {% for story in stories %}
+                        <li class="{% if current_story.id == story.id %}active{% endif %}" {% if current_story.id == story.id %}disabled="disabled"{% endif %}>
+                            <a href="{% url 'story' story.id %}" {% if current_story.id == story.id %}disabled="disabled"{% endif %} >{{ city.name }}  {{ story.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="large-9 columns">
+                <div class="large-12 columns">
+                    <h2>{{ current_story.title }}</h2>
+                </div>
+
+                <div class="large-12 columns top30 content">
+                    {% if current_story.image %}
+                        <img class="featurette-image img-responsive img-polaroid img-textwrap" src="{{current_story.image.url }}" alt="Generic placeholder image">
+                    {% endif %}
+
+                    <p class="tiny-mce">
+                        {{ current_story.description|safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock content %}
