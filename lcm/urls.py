@@ -26,17 +26,18 @@ blog_urls = [
 ]
 
 
-
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     # Examples:
     # url(r'^$', 'lcm.views.home', name='home'),
     url(r'^', include('lcm.apps.frontpages.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 
-     url(r'^comments/', include('django.contrib.comments.urls')),
-     url(r'^blog/', include(blog_urls)),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^blog/', include(blog_urls)),
+    url(r'^captcha/', include('captcha.urls')),
 
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
