@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'mptt',
     'tagging',
     'zinnia',
+    'captcha',
 
     # Project
     'lcm.apps.frontpages',
@@ -179,6 +180,10 @@ SOUTH_TESTS_MIGRATE = False  # Do not run the migrations for our tests.
                              # for the tests and as such nothing needs to be
                              # migrated.
 
+
+SOUTH_MIGRATION_MODULES = {
+    'captcha': 'captcha.south_migrations',
+}
 
 # ========================================================
 # EMAILS

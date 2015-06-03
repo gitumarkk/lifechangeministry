@@ -5,6 +5,9 @@ from django import forms
 # Project
 from lcm.apps.frontpages.models import Contact
 
+# Third party
+from captcha.fields import CaptchaField
+
 
 class ContactForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Name',
@@ -22,6 +25,8 @@ class ContactForm(forms.ModelForm):
                                                             'class': 'required form-control'},
                                                                ),
                              label=_("Message"))
+
+    captcha = CaptchaField()
 
     class Meta:
         model = Contact
