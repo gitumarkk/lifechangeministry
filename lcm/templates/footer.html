@@ -11,12 +11,12 @@
      <div class="medium-8 medium-8 pull-4 columns">
         <a href="http://www.lcm.com" class="lcm-logo regular"></a>
         <ul class="lcm-links">
-            <li> <a href="{% url 'home' %}" >Home</a></li>
-            <li> <a href="{% url 'about' %}">About</a></li>
-            <!-- <li> <a href="{% url 'stories' %}" >Stories</a></li> -->
-            <!-- <li> <a href="{% url 'ministry' %}">Ministry</a></li>
-            <li> <a href="{% url 'partners' %}">Partners</a></li> -->
-            <li> <a href="{% url 'contact' %}">Contact Us</a></li>
+            <li {% if home_is_active %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+            <li {% if about_is_active %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>
+            <li {% if ministry_is_active %}class="active" {% endif %}><a href="{% url 'ministry' %}">Ministry</a></li>
+            <li {% if events_nav_is_active %}class="active"{% endif %}><a href="{% url 'events' %}" class="">Events</a></li>
+            <li {% if blog_is_active %}class="active"{% endif %}><a href="{% url 'zinnia_entry_archive_index' %}">Blog</a></li>
+            <li {% if contact_is_active %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact Us</a></li>
        </ul>
        <p class="copyright">&copy; Life Change Ministries. &middot; </p>
     </div>
